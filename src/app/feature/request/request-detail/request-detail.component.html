@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<span class="page-title font-weight-bold font-italic">{{title}}</span>
+<span>  | <a routerLink="/request/list">Return to list...</a></span>
+<div *ngIf="!loggedInUser">To continue login is needed...</div>
+<div *ngIf="loggedInUser">
+    <div *ngIf="!request">Loading...</div>
+        <div *ngIf="request">
+          <table class="table table-sm">
+            <tr>
+                <th>ID</th>
+                <td>{{request.id}}</td>
+                <th>Delivery Type</th>
+                <td>{{request.deliveryMode}}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{request.user.username}}</td>
+                <th>Current Status</th>
+                <td>{{request.status}}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{request.description}}</td>
+                <th>Current Total</th>
+                <td>{{request.total | currency}}</td>
+            </tr>
+            <tr>
+                <th>Justification</th>
+                <td>{{request.justification}}</td>
+                <th>Date Needed</th>
+                <td>{{request.dateNeeded}}</td>
+            </tr>
+            <tr *ngIf="request.status == 'REJECTED'">
+                <th>Reason for Rejection</th>
+                <td>{{request.reasonForRejection}}</td>
+            </tr>
+        </table>
+  
+         <app-list-line-items></app-list-line-items> 
+         <!-- <button type="submit" class="btn btn-primary" onclick="window.location.reload()" [disabled]="userForm.invalid">Submit Request</button> -->
+         <button class="btn btn-primary btn-sm" (click)="submit()" 
+             *ngIf="request.status == 'NEW' && loggedInUser.id == request.user.id">Submit Request</button> 
+        </div>
+    </div>

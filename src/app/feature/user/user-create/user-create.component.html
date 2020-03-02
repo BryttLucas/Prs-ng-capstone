@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<div class="component" *ngIf="user">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/user/list">Return to list...</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>Id</td>
+            </tr>  
+            <tr>
+                <td>Username</td>
+                <td><input [(ngModel)]="user.username" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input [(ngModel)]="user.password"  class="rounded" type="password"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input [(ngModel)]="user.lastName" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input [(ngModel)]="user.firstName" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input [(ngModel)]="user.phoneNumber" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="user.email" class="rounded" type="text"></td>
+            </tr>    
+            <tr>
+                <td>Reviewer</td>
+                <td><input [(ngModel)]="user.reviewer" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Administrator</td>
+                <td><input [(ngModel)]="user.administrator" class="rounded" type="text"></td>
+            </tr>  
+        </table>
+    </main>
+    <span>
+        <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>       
+    </span>
+</div>

@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<span class="page-title font-weight-bold font-italic">{{title}}</span>
+<span><a routerLink="/user/create" *ngIf="isAdmin">
+    <img width="20" height="20" src="assets/add-icon.png" title="add new"></a>
+</span>
+<table  class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.lastName}}, {{user.firstName}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.email}}</td>
+            <td>
+            <a routerLink='/user/detail/{{user.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+            <span> <a routerLink='/user/edit/{{user.id}}' *ngIf="isAdmin">
+                <img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+            </span>
+          </td>
+        </tr>
+    </tbody>
+</table>
