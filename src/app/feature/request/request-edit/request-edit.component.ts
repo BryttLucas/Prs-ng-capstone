@@ -23,34 +23,34 @@ export class RequestEditComponent extends BaseComponent implements OnInit {
               super(sysSvc);
     }
 
-  ngOnInit() {
-    super.ngOnInit();
-    this.route.params.subscribe(parms => this.id = parms["id"]);
-    this.reqSvc.get(this.id).subscribe(jr => {
-      let error: string = jr.error;
-      if(error!=null){
-        console.log(error);
-      }
-      this.request = jr.data;
+    ngOnInit() {
+      super.ngOnInit();
+      this.route.params.subscribe(parms => this.id = parms["id"]);
+      this.reqSvc.get(this.id).subscribe(jr => {
+        let error: string = jr.error;
+        if(error!=null){
+          console.log(error);
+        }
+        this.request = jr.data;
+      });
+      
+    }
+    save():void {
+      this.reqSvc.edit(this.request).subscribe(jr => {
+        let error = jr.error;
+        if(error!=null){
+          console.log(error);
+        }
+        this.router.navigateByUrl("/request/list");
+      });
+    }
+    delete() {
+      this.reqSvc.delete(this.id).subscribe(jr => {
+        console.log("request delete jr:",jr);
+        if (jr.error != null) {
+          console.log("Error deleting request: "+jr.error);
+        }
+        this.router.navigateByUrl("request/list");
     });
-    
   }
-  save():void {
-    this.reqSvc.edit(this.request).subscribe(jr => {
-      let error = jr.error;
-      if(error!=null){
-        console.log(error);
-      }
-      this.router.navigateByUrl("/request/list");
-    });
-  }
-  delete() {
-    this.reqSvc.delete(this.id).subscribe(jr => {
-      console.log("Request delete jr:",jr);
-      if (jr.error != null) {
-        console.log("Error deleting user: "+jr.error);
-      }
-      this.router.navigateByUrl("request/list");
-  });
-}
 }

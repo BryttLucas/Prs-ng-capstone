@@ -20,7 +20,7 @@ export class Request {
                 dateNeeded: Date = new Date(),
                 deliveryMode: string = "",
                 status:string = "",
-                total:number = 0.0,
+                total:number = 0,
                 submittedDate: Date = new Date(),
                 reasonForRejection:string = "") {
 

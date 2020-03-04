@@ -32,25 +32,26 @@ export class RequestDetailComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     super.ngOnInit();
-    this.route.params.subscribe(parms => this.id = parms["id"]);
+    this.route.params.subscribe(parms => this.id = parms['id']);
     this.reqSvc.get(this.id).subscribe(jr => {
       this.request = jr.data as Request;
     });
     this.lineSvc.listLinesByRequest(this.id).subscribe(jr => {
       this.lineItems = jr.data as LineItem[];
     });
-  
-      }
-    submit(): void {
+  }
+
+  submit(): void {
     this.reqSvc.submitRequest(this.request).subscribe(jr => {
-      let error: string = jr.error;
-      if (error != null) {
-        console.log(error);
+      let err: string = jr.error;
+      if (err != null) {
+        console.log(err);
       } else {
-        this.router.navigateByUrl("/request/review");
+        this.router.navigateByUrl("/requests/list");
       }
     });
   }
+
   delete(): void {
     this.lineSvc.delete(this.id).subscribe(jres => {
       let msg: string = jres.error;
@@ -58,11 +59,11 @@ export class RequestDetailComponent extends BaseComponent implements OnInit {
         console.log(msg);
       }
       this.reqSvc.delete(this.id).subscribe(jr => {
-        let error: string = jr.error;
-        if (error != null) {
-          console.log(error);
+        let err: string = jr.error;
+        if (err != null) {
+          console.log(err);
         } else {
-          this.router.navigateByUrl("/request/list");
+          this.router.navigateByUrl("/requests/list");
         }
       });
 
