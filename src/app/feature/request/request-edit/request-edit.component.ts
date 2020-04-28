@@ -43,14 +43,6 @@ export class RequestEditComponent extends BaseComponent implements OnInit {
         }
         this.router.navigateByUrl("/request/list");
       });
-    }
-    delete() {
-      this.reqSvc.delete(this.id).subscribe(jr => {
-        console.log("request delete jr:",jr);
-        if (jr.error != null) {
-          console.log("Error deleting request: "+jr.error);
-        }
-        this.router.navigateByUrl("request/list");
-    });
+   
   }
 }

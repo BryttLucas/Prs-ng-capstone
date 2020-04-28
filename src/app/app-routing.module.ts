@@ -1,17 +1,25 @@
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RefreshComponentComponent } from './core/refresh-component/refresh-component.component';
+
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
-import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+
+import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
-import { RequestListComponent } from './feature/request/request-list/request-list.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
 import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
@@ -19,9 +27,10 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 import { RequestAddLinesComponent } from './feature/request/request-add-lines/request-add-lines.component';
 import { EditLineItemsComponent } from './feature/request/edit-line-items/edit-line-items.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { RefreshComponentComponent } from './core/refresh-component/refresh-component.component';
+
+import { HomeComponent } from './core/home/home.component';
+import { AboutComponent } from './core/about/about.component';
+
 
 
 
@@ -31,7 +40,7 @@ import { RefreshComponentComponent } from './core/refresh-component/refresh-comp
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/users/list", pathMatch: "full"},
+    { path: "", redirectTo: "/home", pathMatch: "full"},
     { path: 'user/login', component: UserLoginComponent },
     { path: "user/list", component: UserListComponent},
     { path: "user/create", component: UserCreateComponent},
@@ -54,7 +63,9 @@ const routes: Routes = [
     { path: "request/lineitems/:id", component:RequestAddLinesComponent},
     { path: "request/lineitems/edit/:id", component:EditLineItemsComponent},
     { path: "refresh/:id", component:RefreshComponentComponent},
-    { path: "**", component:UserListComponent}
+    { path: "home", component:HomeComponent},
+    { path: "about", component:AboutComponent},
+    { path: "**", component:HomeComponent}
 ];
 
 

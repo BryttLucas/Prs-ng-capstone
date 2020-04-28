@@ -6,9 +6,7 @@
     <div *ngIf="!request">Loading...</div>
         <div *ngIf="request">
           <table class="table table-sm">
-            <tr>
-                <!-- <th>ID</th> -->
-                <td>{{request.id}}</td>
+            <tr>         
                 <th>Delivery Type</th>
                 <td>{{request.deliveryMode}}</td>
             </tr>
@@ -35,9 +33,9 @@
                 <td>{{request.reasonForRejection}}</td>
             </tr>
             <app-list-line-items></app-list-line-items>
-         <div>
-            <button class="btn btn-primary btn-sm" (click)="submit()"
-            *ngIf="request.status == 'NEW' && loggedInUser.id == request.user.id">Submit Request</button>
-         </div>
+            <div>
+                <button class="btn btn-primary btn-sm" (click)="submit()"
+                *ngIf="request.status == 'NEW' && loggedInUser.id == request.user.id">Submit Request</button>
+             </div>
 
 

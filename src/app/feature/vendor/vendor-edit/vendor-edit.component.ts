@@ -19,7 +19,6 @@ export class VendorEditComponent implements OnInit {
               private route: ActivatedRoute) {}
             
     ngOnInit() {
-      //get the user id from the url and calling service for vendor
       this.route.params.subscribe(parms => this.id = parms["id"]);
        this.venSvc.get(this.id).subscribe(jr => { 
          this.vendor = jr.data as Vendor;

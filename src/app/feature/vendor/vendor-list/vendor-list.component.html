@@ -6,7 +6,6 @@
 <table  class="table table-sm table-striped">
     <thead>
         <tr>
-            <!-- <th>ID</th> -->
             <th>Code</th>
             <th>Name</th>
             <th>Phone</th>
@@ -16,7 +15,6 @@
     </thead>
     <tbody>
         <tr *ngFor="let vendor of vendors">
-            <!-- <td>{{vendor.id}}</td> -->
             <td>{{vendor.code}}</td>
             <td>{{vendor.name}}</td>
             <td>{{vendor.phoneNumber}}</td>
@@ -24,7 +22,7 @@
             <td>    
                 <a routerLink='/vendor/detail/{{vendor.id}}'>
                     <img src='assets/details.png' width='20' height='20' title='Detail'></a>
-             
+                 |
                 <a routerLink='/vendor/edit/{{vendor.id}}' *ngIf="isAdmin">
                     <img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
            </td>

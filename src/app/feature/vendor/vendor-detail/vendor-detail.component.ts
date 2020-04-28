@@ -24,7 +24,6 @@ export class VendorDetailComponent extends BaseComponent implements OnInit {
     
 
   ngOnInit() {
-    //get the user id from the url and calling service for user
     super.ngOnInit();
     this.route.params.subscribe(parms => this.id = parms["id"]);
      this.venSvc.get(this.id).subscribe(jr => { 

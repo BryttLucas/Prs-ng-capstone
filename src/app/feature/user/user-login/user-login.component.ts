@@ -21,12 +21,7 @@ export class UserLoginComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    // defaulting uname and pwd for testing purposes
-    this.user.username = 'sblessing';
-    this.user.password = 'login';
-
-    // initialize system user to null
-    this.sysSvc.loggedInUser = null;
+   
   }
 
   login() {
@@ -36,14 +31,11 @@ export class UserLoginComponent extends BaseComponent implements OnInit {
         console.log("jr:", jr);
         if (jr.error == null) {
           if (jr.data == null) {
-            // no error but still no user???
             this.message = "Invalid Username/Password combo.  Retry";
           }
           else {
-            // should be g2g!
             this.user = jr.data as User;
             this.sysSvc.loggedInUser = this.user;
-            // good login, navigate to 'home' / 'welcome' page
             console.log('logged in user = ',this.user);
             this.router.navigateByUrl('/users/list');
           }

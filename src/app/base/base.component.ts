@@ -3,23 +3,37 @@ import { User } from '../model/user.class';
 import { SystemService } from '../service/system.service';
 
 @Component({
-  template: ""
+  selector: 'app-base',
+  templateUrl: './base.component.html',
+  styleUrls: ['./base.component.css']
 })
 export class BaseComponent implements OnInit {
   loggedInUser: User = null;
   isAdmin: boolean;
   isReviewer: boolean;
-  
+  sortColumn: string = 'id';
+  ascOrder: boolean = true;
+
   constructor(protected sysSvc: SystemService) { }
 
   ngOnInit() {
-    // verify that the user is logged in
     this.sysSvc.checkLogin();
-    // set the system user credentials in the current component
     this.loggedInUser = this.sysSvc.loggedInUser;
     this.isAdmin = this.sysSvc.isAdmin();
-    this.isReviewer = this.sysSvc.isReviewer();
+    this.isReviewer= this.sysSvc.isReviewer();
+  }
 
+  logout(): void {
+    this.sysSvc.loggedInUser = null;
+  }
+
+  sort(column: string): void {
+    if(this.sortColumn === column) {
+      this.ascOrder = !this.ascOrder;
+      return;
+    }
+    this.ascOrder = true;
+    this.sortColumn = column;
   }
 
 }

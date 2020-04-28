@@ -6,7 +6,6 @@
 <table  class="table table-sm table-striped">
     <thead>
         <tr>
-            <!-- <th>ID</th> -->
             <th>Username</th>
             <th>Name</th>
             <th>Phone</th>
@@ -16,13 +15,12 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
-            <!-- <td>{{user.id}}</td> -->
             <td>{{user.username}}</td>
             <td>{{user.lastName}}, {{user.firstName}}</td>
             <td>{{user.phoneNumber}}</td>
             <td>{{user.email}}</td>
             <td>
-            <a routerLink='/user/detail/{{user.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+            <a routerLink='/user/detail/{{user.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> |
             <span> <a routerLink='/user/edit/{{user.id}}' *ngIf="isAdmin">
                 <img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
             </span>

@@ -29,6 +29,10 @@ import { RequestAddLinesComponent } from './feature/request/request-add-lines/re
 import { ListLineItemsComponent } from './feature/request/list-line-items/list-line-items.component';
 import { EditLineItemsComponent } from './feature/request/edit-line-items/edit-line-items.component';
 import { RefreshComponentComponent } from './core/refresh-component/refresh-component.component';
+import { HomeComponent } from './core/home/home.component';
+import { AboutComponent } from './core/about/about.component';
+import { FootComponent } from './core/foot/foot.component';
+
 
 
 
@@ -62,6 +66,9 @@ import { RefreshComponentComponent } from './core/refresh-component/refresh-comp
     ListLineItemsComponent,
     EditLineItemsComponent,
     RefreshComponentComponent,
+    HomeComponent,
+    AboutComponent,
+    FootComponent,
     
   
     

@@ -6,7 +6,6 @@
 <table  class="table table-sm table-striped">
     <thead>
         <tr>
-            <!-- <th>ID</th> -->
             <th>Vendor</th>
             <th>Name</th>
             <th>Price</th>
@@ -15,13 +14,12 @@
             </thead>
             <tbody>
             <tr *ngFor="let product of products">
-                <!-- <td>{{product.id}}</td> -->
                 <td>{{product.vendor.name}}</td>
                 <td>{{product.name}}</td>
                 <td>{{product.price | currency}}</td>
             <td>    
            <a routerLink='/product/detail/{{product.id}}'><img src='assets/details.png' width='20' height='20' title="Detail"></a>
-        
+                |
            <a routerLink='/product/edit/{{product.id}}' *ngIf="isAdmin"><img src='assets/pencil-icon.png' width='20' height='20' title="Edit"></a>
            </td>
         </tr>

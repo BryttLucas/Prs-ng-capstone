@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+<span class="page-title font-weight-bold font-italic">{{title}}</span>
+   <table>
+       <span style="padding-right:630px; padding-left: 25%;">
+        <img src="assets/MAX Logo.svg.png" with= "200" height= "200"> 
+    </span>
+    <body>  
+        <div class="hero">
+            
+           <pre>
+
+                                You may be wondering what a capstone really is?  The great pyramid of Giza had a gold capstone at the peak. 
+                            It was the flashy piece to display to the world for miles around. That capstone stood so high above everyone because
+                            of the solid foundation.  Much like this capstone project is meant to be the flashy piece of technology as shown.
+                            Which I have to build to this point with a solid foundation in multiple technologies.
+                
+                            Some of these technologies include:
+                        
+                                MySQL
+                                Java/Spring/JPA
+                                TypeScript
+                                Angular
+                                HTML/CSS
+                        
+                                The Purchase Request System is a real-world, single-page application with a RESTful service that a company can use
+                            for in house ordering supplies for different people or departments. The application allows for submission of users orders. 
+                            A reviewer or superior would be given the opportunity to view the order and approve or reject it with reason. Users with 
+                            administrator access have full CRUD functionality for users, vendors, and products which can be seen throughout this program. 
+                            For those of you that don’t know what CRUD means.  It’s an acronym for Create, Read, Update and Delete, and it is used 
+                            throughout the entire MAX Technical Training bootcamp. All of these functions began with our database Which was built using 
+                            MySQL. With creating the database with 5 tables, 3 of which use foreign keys. These foreign keys represent relationships from 
+                            one table to another.
+                        
+                                The Java language inside of the Spring framework was used to create controllers for each table. These controllers contain
+                            the logic that allows changes in the front end to be reflected in the database. All the CRUD functions are done through this
+                            application with administrative access. Crud functions for User, Vendor and Product are similar. Next to the User List is an 
+                            add button. An administrator has the ability to Create a user. Username and password with other information about User can be 
+                            entered. Username that’s already being used cannot be added again. Extra data validation was added while testing this application.  
+                                 Clicking the save button to store this information to the database. This Crud function Update will change Users status. 
+                            This user could be made into a reviewer. Using the edit button for implementing the users reviewer status in the database. A 
+                            person who is a reviewer cannot review and approve their own submitted request. That functionality has been added to this application. 
+                            Creating a purchase request is the core functionality of this application. Each purchase request is a collection of the products the 
+                            user needs for an order. The request page, which is accessed by clicking the request icon in the navigation bar. It contains a list 
+                            of all the requests that have been created. With the Plus icon there is a status column on this page that reveals whether or not each 
+                            request has been approved, rejected, or is in review status. 
+                
+                                If the request does not have a status of either edit or new, the lines icon will not be displayed in the action column. 
+                            We have this constraint in place so that no submitted request can be changed before it has been reviewed. We also keep this icon 
+                            hidden on each row that represents a request that wasn't created by the logged in user. All requests that have a total price under 
+                            50 dollars are automatically approved. Once a request is created, line items that track the price and quantity of the product being 
+                            ordered, can be added to the request. The request is then submitted for review. Requests can be approved or rejected. Using the 
+                            approve icon, all of the information regarding the request such as the reason for the request and the total cost are displayed. 
+                            The line items that pertain to this request along with the quantity, unit price and the total cost of each line item. But the request 
+                            cannot be rejected without first adding a reason for the rejection. This way, the user that submitted the request can review the rejection
+                            reason,and potentially edit the request for approval again. Once the request has been approved or rejected, the application redirects back 
+                            to the requests in review status. Go back to the list of requests. The reason for rejection is available to  be viewed in the details.
+
+           </pre>
+        </div>     
+    </body>
+</table>         
+    
+    
+
+

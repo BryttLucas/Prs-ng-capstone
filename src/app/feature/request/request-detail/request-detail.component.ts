@@ -23,11 +23,11 @@ export class RequestDetailComponent extends BaseComponent implements OnInit {
    
 
   constructor(protected sysSvc: SystemService,
-    private route: ActivatedRoute,
-    private reqSvc: RequestService,
-    private router: Router,
-    private lineSvc: LineService) {
-    super(sysSvc);
+              private route: ActivatedRoute,
+              private reqSvc: RequestService,
+              private router: Router,
+              private lineSvc: LineService) {
+              super(sysSvc);
   }
 
   ngOnInit() {

@@ -21,7 +21,6 @@ export class UserEditComponent implements OnInit {
             
  
     ngOnInit() {
-      //get the user id from the url and calling service for user
       this.route.params.subscribe(parms => this.id = parms["id"]);
        this.userSvc.get(this.id).subscribe(jr => { 
          this.user = jr.data as User;
